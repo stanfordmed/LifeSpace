@@ -22,6 +22,7 @@ struct RefreshIcon: View {
                 .background(Color.black.opacity(0.8))
                 .cornerRadius(50)
                 .rotationEffect(.degrees(rotationAngle))
+                .accessibilityLabel("REFRESHING_MAP")
                 .onAppear {
                     withAnimation(.linear(duration: 1).repeatForever(autoreverses: false)) {
                         rotationAngle = 360
@@ -30,7 +31,6 @@ struct RefreshIcon: View {
                 .onDisappear {
                     rotationAngle = 0
                 }
-                .accessibilityLabel("REFRESHING_MAP")
         }
     }
 }
